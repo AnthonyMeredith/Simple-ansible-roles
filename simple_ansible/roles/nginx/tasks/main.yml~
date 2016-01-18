@@ -1,0 +1,13 @@
+---
+# Debian-specific tasks
+
+- name: create nginx directory
+  file: path=/etc/nginx state=directory
+
+- name: Install nginx
+  apt: name=nginx state=present
+
+- name: Configure NGinx Core
+  template: src=etc_nginx_nginx.conf dest=/etc/nginx/nginx.conf owner=root group=root mode=0644
+  notify: restart nginx
+

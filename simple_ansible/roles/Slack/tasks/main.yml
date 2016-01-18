@@ -1,0 +1,9 @@
+---
+
+- name: Send message via slack
+  local_action:
+     module: slack
+     domain: DevOpsGuys.slack.com
+     token: "{{ slack_token }}"
+     msg: "{{ inventory_hostname }} completed"
+

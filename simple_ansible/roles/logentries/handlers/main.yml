@@ -1,0 +1,6 @@
+---
+- name: restart logentries
+  service: name=logentries enabled=yes state=restarted
+
+- name: reload logentries
+  service: name=logentries state=reloaded
